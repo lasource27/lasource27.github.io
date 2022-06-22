@@ -14,6 +14,14 @@
         <link rel="stylesheet" href="assets/css/styles.css">
 
         <title>Responsive Portfolio Website</title>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init("x5Hm02m53e-R_YZb2");
+            })();
+        </script>
     </head>
     <body>
       
@@ -349,49 +357,26 @@
                 <h2 class="section__title">Contact Me</h2>
                 <span class="section__subtitle">Get in touch</span>
                 <div class="contact__container container">
-                    <!-- <div>
-                        <div class="contact__information">
-                            <i class="uil uil-phone contact__icon"></i>
-                            <div>
-                                <h3 class="contact__title">Call me</h3>
-                                <span class="contact__subtitle">999-777-666</span>
-                            </div>
-                        </div>
-                        <div class="contact__information">
-                            <i class="uil uil-envelope contact__icon"></i>
-                            <div>
-                                <h3 class="contact__title">Email</h3>
-                                <span class="contact__subtitle">abc@example.com</span>
-                            </div>
-                        </div>
-                        <div class="contact__information">
-                            <i class="uil uil-map contact__icon"></i>
-                            <div>
-                                <h3 class="contact__title">Location</h3>
-                                <span class="contact__subtitle">Abc st, London, UK</span>
-                            </div>
-                        </div>
-                    </div> -->
-                    <form action="" class="contact__form grid">
+                    <form class="contact__form grid">
                         <div class="class_inputs grid">
                             <div class="contact__content">
                                 <label for="" class="contact__label">Name</label>
-                                <input type="text" class="contact__input">
+                                <input type="text" id="from_name" class="contact__input">
                             </div>
                             <div class="contact__content">
                                 <label for="" class="contact__label">Email</label>
-                                <input type="email" class="contact__input">
+                                <input type="email" id="from_email" class="contact__input">
                             </div>
                             <div class="contact__content">
                                 <label for="" class="contact__label">Title</label>
-                                <input type="email" class="contact__input">
+                                <input type="text" id="subject" class="contact__input">
                             </div>
                             <div class="contact__content">
                                 <label for="" class="contact__label">Message</label>
-                                <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                                <textarea name="" id="message" cols="0" rows="7" class="contact__input"></textarea>
                             </div>
-                            <div>
-                                <a href="" class="button button--flex">
+                            <div class="send__message-button">
+                                <a class="button button--flex" type="submit" onclick="sendMail(event)">
                                     Send Message
                                     <i class="uil uil-message button__icon"></i>
                                 </a>

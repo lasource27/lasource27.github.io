@@ -111,4 +111,23 @@ function scrollUp(){
 }
 window.addEventListener('scroll', scrollUp)
 
-/*==================== DARK LIGHT THEME ====================*/ 
+/*==================== EMAILJS ====================*/
+function sendMail(event) {
+    event.preventDefault();
+    var params = {
+        from_name: document.getElementById("from_name").value,
+        from_email: document.getElementById("from_email").value,
+        message: document.getElementById("message").value,
+        subject: document.getElementById("subject").value,
+    };
+
+    emailjs.send('service_nhatzkf','template_mmdnayv',params).then(function(res){
+        console.log("success", res.status)
+    })
+    
+    document.getElementById("from_name").value = ""
+    document.getElementById("from_email").value = ""
+    document.getElementById("message").value = ""
+    document.getElementById("subject").value = ""
+    
+} 
